@@ -3,6 +3,7 @@ import { StatusBar, View } from 'react-native';
 
 import CustomOnbaording from './custom-onboarding'
 import CustomTabNavigation from './custom-tabNavigation'
+import CustomReactNavHeader from './custom-reactNavigationHeader'
 
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
     <View style={{ flex: 1 }}>
       <StatusBar hidden />
       {/* <CustomOnbaording /> */}
-      <CustomTabNavigation />
+      {/* <CustomTabNavigation /> */}
+      <CustomReactNavHeader />
     </View>
   )
 }
