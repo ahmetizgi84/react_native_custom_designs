@@ -1,6 +1,8 @@
 import React from 'react'
-import { View, Text, FlatList } from 'react-native'
+import { View, Text, FlatList, Modal, TouchableOpacity, StyleSheet } from 'react-native'
 import { Svg, Polygon } from 'react-native-svg'
+import { BlurView } from "@react-native-community/blur";
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const dummyData = [
     {
@@ -32,9 +34,11 @@ const dummyData = [
 
 const App = () => {
 
+    const [isModalOpen, setIsModalOpen] = React.useState(false)
+
     const renderItem = ({ item }) => {
         return (
-            <View style={{
+            <TouchableOpacity style={{
                 height: 240,
                 width: 120,
                 backgroundColor: item.color,
@@ -42,7 +46,9 @@ const App = () => {
                 borderRadius: 10,
                 alignItems: 'center',
                 justifyContent: 'center'
-            }}>
+            }}
+                onPress={() => setIsModalOpen(true)}
+            >
                 <Text style={{ color: 'white', fontSize: 16 }}>{item.title}</Text>
 
                 <View
@@ -63,7 +69,7 @@ const App = () => {
 
                 </View>
 
-            </View>
+            </TouchableOpacity>
         )
     }
 
@@ -82,11 +88,45 @@ const App = () => {
                 data={dummyData}
                 keyExtractor={item => item.id.toString()}
                 renderItem={renderItem}
-
-
             />
+
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={isModalOpen}
+            >
+                <BlurView
+                    style={{
+                        flex: 1,
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}
+                    blurType="light"
+                    blurAmount={20}
+                    reducedTransparencyFallbackColor="white"
+                >
+
+                    <TouchableOpacity
+                        style={styles.absolute}
+                        onPress={() => setIsModalOpen(false)}
+                    >
+                    </TouchableOpacity>
+
+                </BlurView>
+            </Modal>
+
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    absolute: {
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0
+    }
+})
 
 export default App
