@@ -5,6 +5,7 @@ import CustomOnbaording from './custom-onboarding'
 import CustomTabNavigation from './custom-tabNavigation'
 import CustomReactNavHeader from './custom-reactNavigationHeader'
 import CustomHorizontalList from './custom-horizontalList'
+import CustomPieChart from './custom-pieChart'
 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
       {/* <CustomOnbaording /> */}
       {/* <CustomTabNavigation /> */}
       {/* <CustomReactNavHeader /> */}
-      <CustomHorizontalList />
+      {/* <CustomHorizontalList /> */}
+      <CustomPieChart />
     </View>
   )
 }
