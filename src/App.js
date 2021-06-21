@@ -6,17 +6,19 @@ import CustomTabNavigation from './custom-tabNavigation'
 import CustomReactNavHeader from './custom-reactNavigationHeader'
 import CustomHorizontalList from './custom-horizontalList'
 import CustomPieChart from './custom-pieChart'
+import CustomTabNavigation2 from './custom-tabNavigation2'
 
 
 function App() {
   return (
-    <View style={{ flex: 1, backgroundColor: "white" }}>
+    <View style={{ flex: 1, backgroundColor: "purple" }}>
       <StatusBar hidden />
       {/* <CustomOnbaording /> */}
       {/* <CustomTabNavigation /> */}
       {/* <CustomReactNavHeader /> */}
       {/* <CustomHorizontalList /> */}
-      <CustomPieChart />
+      {/* <CustomPieChart /> */}
+      <CustomTabNavigation2 />
     </View>
   )
 }
